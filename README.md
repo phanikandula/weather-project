@@ -71,3 +71,15 @@ I'll also include details on steps to deploy locally. But docker is the preferre
 In the initial iteration, I'll use docker-compose to deploy the 'production' version on a VM from one of the cloud providers.
 
 post-MVP: I'll include manifests needed to deploy on kubernetes.
+
+## Develop
+
+### Locally without docker
+
+Need two terminals: One for frontend and one for backend
+
+Terminal 1: ```cd projects/backend && npm install && npm run dev```
+
+Terminal 2: ```cd projects/frontend && npm install && npm start```
+
+Now the browser should pop up. Enter any string and the roundtrip to backend happens and the value is echoed back.
