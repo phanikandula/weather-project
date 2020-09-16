@@ -1,6 +1,7 @@
 import express from 'express';
 import { rootHandler } from './handlers/root';
 import { helloHandler } from './handlers/hello';
+import { weatherHandler } from './handlers/weather';
 
 import morgan from 'morgan';
 import compression from 'compression';
@@ -13,3 +14,4 @@ app.use(compression());
 app.use(responsetime());
 app.get('/', rootHandler);
 app.get('/hello/:name', helloHandler);
+app.get('/weather/:zip', weatherHandler);

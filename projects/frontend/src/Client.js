@@ -1,5 +1,5 @@
 function search(query, cb) {
-    return fetch(`/hello/${query}`, {
+    return fetch(`/weather/${query}`, {
       accept: "application/json"
     })
       .then(checkStatus)

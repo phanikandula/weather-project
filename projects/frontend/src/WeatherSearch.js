@@ -1,11 +1,11 @@
 import React from "react";
 import Client from "./Client";
-
+const defaultResults={current: 'NA', high: 'NA', low: 'NA'}
 class WeatherSearch extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            results: [],
+            results: defaultResults,
             searchValue: ""
         };
         this.handleChange = this.handleChange.bind(this);
@@ -22,16 +22,16 @@ class WeatherSearch extends React.Component {
         
         if (value === "") {
             this.setState({
-                results: [],
+                results: defaultResults,
             });
         } else {
             this.setState({
-                results: [],
+                results: defaultResults,
             });
 
-            Client.search(value, results => {
+            Client.search(value, result => {
                 this.setState({
-                    results: results.hello
+                    results: result
                 });
             });
         }
@@ -45,13 +45,15 @@ class WeatherSearch extends React.Component {
             <div>
                 <form onSubmit={this.handleSubmit}>
                     <label>
-                        Name:
+                        Zip:
           <input type="text" value={this.state.searchValue} onChange={this.handleChange} />
                     </label>
                     <input type="submit" value="Submit" />
                 </form>
                 <div>
-                    {results}
+                    Current: {results.current}, 
+                    High: {results.high},
+                    Low: {results.low}
                 </div>
             </div>
         );
