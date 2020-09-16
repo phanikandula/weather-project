@@ -83,3 +83,9 @@ Terminal 1: ```cd projects/backend && npm install && npm run dev```
 Terminal 2: ```cd projects/frontend && npm install && npm start```
 
 Now the browser should pop up. Enter any string and the roundtrip to backend happens and the value is echoed back.
+
+Backend will use either a stub weather service (by default) or Open Weather service if OPEN_WEATHER_API_KEY environment variable is set.
+
+To use Open Weather service: Stop command running in Terminal 1 and export OPEN_WEATHER_API_KEY=<value> and then run the Terminal 1 command again.
+
+Key for Open Weather service can be obtained from openweathermap.org for free.
