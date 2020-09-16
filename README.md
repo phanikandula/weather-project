@@ -89,3 +89,19 @@ Backend will use either a stub weather service (by default) or Open Weather serv
 To use Open Weather service: Stop command running in Terminal 1 and export OPEN_WEATHER_API_KEY=<value> and then run the Terminal 1 command again.
 
 Key for Open Weather service can be obtained from openweathermap.org for free.
+
+## Sequence diagrams
+
+### Typical flow when Open Weather API key is provided and zip passes validation.
+
+![Flow-OpenWeather](docs/Flow-OpenWeather.svg)
+
+### Flow when zip code fails validation
+
+![Flow-bad-zip](docs/Flow-bad-zip.svg)
+
+### Flow on startup or when API key is not set
+
+![Flow-StubWeather](docs/Flow-StubWeather.svg)
+
+
