@@ -1,3 +1,6 @@
+//Code from https://github.com/fullstackreact/food-lookup-demo/blob/master/client/src/Client.js
+//Seems like useful snippet that we can convert to a small package instead of copying into different repos.
+//That's for post MVP.
 function search(query, cb) {
     return fetch(`/weather/${query}`, {
       accept: "application/json"

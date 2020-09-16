@@ -1,6 +1,11 @@
 import React from "react";
 import Client from "./Client";
+
+//When the app starts or if zip code is invalid, this defaultResults is used.
 const defaultResults={current: 'NA', high: 'NA', low: 'NA'}
+
+//Once user types in zip code and submits the form,
+//Call to the backend is executed and results are presented.
 class WeatherSearch extends React.Component {
     constructor(props) {
         super(props);
@@ -12,8 +17,9 @@ class WeatherSearch extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    handleChange(event) {
-        this.setState({ searchValue: event.target.value });
+    //As the input is typed, update our state.
+    handleChange = e => {
+        this.setState({ searchValue: e.target.value });
     }
 
     //https://reactjs.org/docs/forms.html#controlled-components
@@ -28,7 +34,8 @@ class WeatherSearch extends React.Component {
             this.setState({
                 results: defaultResults,
             });
-
+            //It's time to call the backend.
+            //When callback is executed, update our state.
             Client.search(value, result => {
                 this.setState({
                     results: result

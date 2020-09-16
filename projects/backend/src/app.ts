@@ -15,3 +15,6 @@ app.use(responsetime());
 app.get('/', rootHandler);
 app.get('/hello/:name', helloHandler);
 app.get('/weather/:zip', weatherHandler);
+
+//NOTE: No caching of Open Weather API responses in MVP.
+//Plan is to add Redis caching post MVP.

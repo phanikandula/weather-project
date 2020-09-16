@@ -62,15 +62,15 @@ But two services means we need a reverse proxy to avoid CORS issues. I have used
 
 ### Run directly vs docker
 
-To make it easy for everyone trying out the project, I'll provide a way to build docker images for frontend and backend and bring them up together with docker-compose tool. 
+Post-MVP: To make it easy for everyone trying out the project, I'll provide a way to build docker images for frontend and backend and bring them up together with docker-compose tool. 
 
 I'll also include details on steps to deploy locally. But docker is the preferred way to run.
 
 ### Deploy using docker-compose vs Kubernetes
 
-In the initial iteration, I'll use docker-compose to deploy the 'production' version on a VM from one of the cloud providers.
+In the initial iteration, I'll just run locally - instructions towards the end of this file.
 
-post-MVP: I'll include manifests needed to deploy on kubernetes.
+post-MVP: I'll include docker-compose and also manifests needed to deploy on kubernetes.
 
 ## Develop
 
@@ -82,7 +82,7 @@ Terminal 1: ```cd projects/backend && npm install && npm run dev```
 
 Terminal 2: ```cd projects/frontend && npm install && npm start```
 
-Now the browser should pop up. Enter any string and the roundtrip to backend happens and the value is echoed back.
+Now the browser should pop up. Enter any five digit number for zip code in USA and the service will try to fetch the current, high and low temperature in F.
 
 Backend will use either a stub weather service (by default) or Open Weather service if OPEN_WEATHER_API_KEY environment variable is set.
 
